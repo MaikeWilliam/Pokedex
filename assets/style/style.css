@@ -47,10 +47,27 @@ main {
     text-transform: capitalize;
 }
 
+.types {
+    width: 50%;
+    position: absolute;
+    top: 64%;
+    left: 22%;
+    display: flex;
+    gap: 20px;
+}
+
+.type {
+    width: 60%;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+}
+
 .form {
     position: absolute;
     width: 65%;
-    top: 65%;
+    top: 70%;
     left: 13.5%;
 }
 

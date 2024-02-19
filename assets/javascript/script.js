@@ -7,6 +7,8 @@ const input = document.querySelector(".input_search");
 const buttonPrev = document.querySelector(".btn-prev");
 const buttonNext = document.querySelector(".btn-next");
 
+// const pokemonType = document.querySelector(".types");
+
 let searchPokemon = 1;
 
 const fetchPokemon = async (pokemon) => {
@@ -35,6 +37,18 @@ const renderPokemon = async (pokemon) => {
             data["sprites"]["versions"]["generation-v"]["black-white"][
                 "animated"
             ]["front_default"];
+
+        document.querySelector(".types").innerHTML = "";
+
+        for (let i = 0; i <= data.types.length; i++) {
+            var newType = document.createElement("div");
+            var newContent = document.createTextNode(data.types[i].type.name);
+            newType.appendChild(newContent);
+            newType.classList.add("type");
+            document.querySelector(".types").appendChild(newType);
+        }
+
+        newContent = " ";
         input.value = "";
         searchPokemon = data.id;
     } else {
